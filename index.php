@@ -1,46 +1,25 @@
-<?php
-class Fruit
-{
+<?php 
+
+class Fruit {
     public $name;
     public $color;
-
-    public function set_name($name)
+    
+    public function __construct($name, $color)
     {
         $this->name = $name;
-    }
-
-    public function get_name()
-    {
-        return $this->name;
-    }
-
-    public function set_color($color)
-    {
         $this->color = $color;
+    } 
+    public function intro(){
+        echo "This fruit is {$this->name} and its color is {$this->color}";
     }
-
-    public function get_color()
-    {
-        return $this->color;
+}
+class Strawberry extends Fruit{
+    
+    public function message(){
+        echo "Am I a Fruit or a berry";
     }
 }
 
-$apple = new Fruit;
-
-$apple->set_name("apple");
-$apple->set_color("black");
-
-$banana = new Fruit;
-$banana->set_name("banana");
-$banana->set_color('orange');
-
-// echo $banana->get_name();
-echo '<br>';
-echo $banana->name;
-echo '<br>';
-echo $banana->color;
-// echo $apple->get_color();
-echo '<br>';
-echo $apple->name;
-echo '<br>';
-echo $apple->color;
+$strawberry = new Strawberry("Strawberry","Purple");
+$strawberry->message();
+$strawberry->intro();
