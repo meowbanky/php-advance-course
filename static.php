@@ -1,9 +1,9 @@
 <?php
 class Greetings
 {
-    public static function welcome()
+    public static function welcome($msg)
     {
-        echo "You are welcome";
+        echo $msg;
     }
 
     public static function addition($num1, $num2)
@@ -12,13 +12,13 @@ class Greetings
     }
 }
 
-class NewArea
+class NewArea extends Greetings
 {
-    public static function addnewdata()
+    public static function addnewdata($msg)
     {
-        Greetings::welcome();
+        parent::welcome($msg);
     }
 }
 echo Greetings::addition(5, 8);
-Greetings::welcome();
-NewArea::addnewdata();
+Greetings::welcome("Hello Greetings");
+NewArea::addnewdata("Hello New data");
